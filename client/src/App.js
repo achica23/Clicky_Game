@@ -21,13 +21,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar count={this.state.count} handleIncrement={this.handleIncrement} />
-        {this.state.characters.map(character => (
-          <Character
-            id={character.id}
-            image={character.image}
-            key={character.name}
-          />
-        ))}
+        <div className="row">
+          {this.state.characters.map(character => (
+            <Character
+              id={character.id}
+              image={character.image}
+              key={character.name}
+              handleIncrement={this.handleIncrement}
+            />
+          ))}
+        </div>
       </div>
     );
   }
